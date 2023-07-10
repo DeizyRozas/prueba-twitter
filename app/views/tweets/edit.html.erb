@@ -1,0 +1,21 @@
+
+
+
+
+<section class="mt-5"> 
+
+  <div class="card bg-light  p-3">
+      <div class="card-body">
+      <h1>Editing tweet</h1>
+        <%= render "form", tweet: @tweet %>
+      </div>
+      <div>
+        <%= link_to "Show this tweet", @tweet, class: 'p-3 my-2' %> 
+        <br>
+        <%= link_to "Back to tweets", tweets_path, class: 'p-3 my-2' %>
+
+        <%= button_to "Destroy this tweet", @tweet, method: :delete, class: 'btn btn-primary ms-3 my-2' %>
+      </div>
+  </div>
+
+</section>

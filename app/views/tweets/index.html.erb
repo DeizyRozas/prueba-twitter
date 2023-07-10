@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+<section class="mb-5">
+
+    <div class="card bg-light">
+        <div class="card-body">
+        <h2 class="ms-5 my-3">Todos los tweets</h2>
+        <%= link_to "Nuevo tweet", new_tweet_path, class: 'btn btn-primary ms-5' %>
+            <div class="d-flex mb-4">
+                <div id="tweets">
+                    <% @tweets.each do |tweet| %>
+                        <div class="m-4 py-2">
+                            <div class="flex-shrink-0 fw-bold ">
+                                <img class="rounded-circle me-4" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                <%= tweet.username %>
+                            </div>
+                            <div class="ms-5 ps-4">
+                                <p class="mb-0"> <%= tweet.description %> </p>
+                                <p class=""><%= link_to "Show this tweet", tweet %></p>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
