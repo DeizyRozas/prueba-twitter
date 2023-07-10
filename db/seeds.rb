@@ -7,6 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-10.times do |i|
+30.times do |i|
     Tweet.create(username: Faker::Artist.name, description: Faker::Quote.jack_handey)
 end
