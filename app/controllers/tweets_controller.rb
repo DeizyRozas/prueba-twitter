@@ -4,6 +4,10 @@ class TweetsController < ApplicationController
   # GET /tweets or /tweets.json
   def index
     @tweets = Tweet.all
+
+    if params[:tweet].present?
+      @tweets = @tweets.search_full_text(params[:tweet])
+    end
   end
 
   # GET /tweets/1 or /tweets/1.json

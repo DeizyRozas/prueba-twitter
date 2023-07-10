@@ -5,6 +5,12 @@
         <div class="card-body">
         <h2 class="ms-5 my-3">Todos los tweets</h2>
         <%= link_to "Nuevo tweet", new_tweet_path, class: 'btn btn-primary ms-5' %>
+        
+        <%= form_with url: tweets_path, method: :get do |form|%> 
+            <%= form.label :tweet, 'Buscar tweet' , class: 'm-5' %> 
+            <%= form.text_field :tweet, value: params[:tweet], class: 'my-5'%> 
+        <%end%>
+
             <div class="d-flex mb-4">
                 <div id="tweets">
                     <% @tweets.each do |tweet| %>
